@@ -1,0 +1,16 @@
+services:
+  video-converter-web-dev:
+    restart: always
+    container_name: video-converter-web-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8081:3000"
+    volumes:
+      - node_modules:/app/node_modules
+      - .:/app
+
+volumes:
+  node_modules:
+    name: node_moduless
